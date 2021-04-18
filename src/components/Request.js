@@ -1,4 +1,4 @@
-import Maps from "./Maps"
+import RequestMaps from "./RequestMap"
 import OurNav from "./OurNav"
 import Search from "./Search"
 import { Component } from "react"
@@ -6,13 +6,13 @@ import Container from "react-bootstrap/Container"
 import Row from 'react-bootstrap/Row'
 import Col from "react-bootstrap/Col"
 
-class ReportMap extends Component {
+class Request extends Component {
     constructor(props) {
         super(props)
         this.state = {
             position: {
-                lat: 43.7044,
-                lng: -72.2887,
+                lat: 37.8719,
+                lng: -122.2585,
             }
         }
     }
@@ -28,7 +28,7 @@ class ReportMap extends Component {
 
                     <Row style={{ margin: '4vmin 0 0 0' }}>
                         <Col style={{ margin: '1vmin 0 0 0' }} md={2.5}>
-                            <p>Click the map to file a report</p>
+                            <p>Click the map to file a request</p>
                         </Col>
                         <Col style={{ margin: '1vmin 0 0 0' }} md={3}>
                             <Search parentCallback={this.handleCallback} />
@@ -37,7 +37,7 @@ class ReportMap extends Component {
 
                     </Row>
                     <div style={{ marginTop: '0.5vmin', marginBottom: '5vmin' }}>
-                        <Maps position={this.state.position} />
+                        <RequestMaps position={this.state.position} />
                     </div>
                 </Container>
             </div>
@@ -45,4 +45,4 @@ class ReportMap extends Component {
     }
 }
 
-export default ReportMap
+export default Request
